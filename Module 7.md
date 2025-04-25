@@ -15,13 +15,34 @@ Else
 6.	Return 0
  
 Program:
+```
+#include <stdio.h>
+#include <string.h>
 
-//type your code here
+struct Person {
+    char name[50];
+    int age;
+};
 
-
+int main() {
+    struct Person p;
+    scanf("%d", &p.age);
+    scanf("%s", p.name);
+    printf("Age:%d\n", p.age);
+    printf("Name:%svaccine:%d\n",p.name,p.age);
+    
+   
+    if(p.age>6)
+    printf("eligibility:yes");
+    else
+    printf("eligibility:no");
+    return 0;
+}
+```
 Output:
 
-//paste your output here
+![WhatsApp Image 2025-04-25 at 10 50 48_879db711](https://github.com/user-attachments/assets/d0278bb3-60f4-4995-b272-994165f49191)
+
 
 
 Result:
@@ -85,16 +106,26 @@ Use scanf to input the file name into the name array.
 5.	Return 0 to indicate successful program execution.
  
 Program:
+```
+#include <stdio.h>
+int main()
+{
+    FILE *fp;
+    char name[100];
+    scanf("%s",name);
+    printf("%s File Created Successfully\n",name);
+    fp=fopen("%s","w");
+    printf("%s File Opened\n",name);
+    fclose(fp);
+    printf("%s File Closed\n",name);
+}
 
-//type your code here
-
-
-
+```
 
 Output:
 
 
-//paste your output here
+![WhatsApp Image 2025-04-25 at 11 02 20_0b19869e](https://github.com/user-attachments/assets/e778a003-8329-4db8-ba52-020bd51a6e51)
 
 
 
@@ -132,16 +163,36 @@ Use scanf to input the file name into the name array and the number of strings i
 5.	Return 0 to indicate successful program execution.
  
 Program:
+```
+#include <stdio.h>
+int main()
+{
+    FILE *fp;
+    char filename[100];
+    scanf("%s",filename);
+    fp=fopen("%s","w");
+    int count;
+    scanf("%d",&count);
+    float num;
+    if(fp==NULL)
+    {
+        printf("Error");
+    }
+    printf("%s Opened\n",filename);
+    for(int i=0;i<count;i++)
+    {
+        scanf("%f",&num);
+        fprintf(fp,"%f",num);
+    }
+    printf("Data added Successfully");
+}
 
-//type your code here
-
-
-
+```
 
 Output:
 
 
-//paste your output here
+![WhatsApp Image 2025-04-25 at 11 01 49_1bc6591b](https://github.com/user-attachments/assets/3589b7d8-d604-42ab-8b3d-41e5b7f93bac)
 
 
 
