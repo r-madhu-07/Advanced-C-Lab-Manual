@@ -15,21 +15,52 @@ Algorithm:
 4.	Exit the program.
  
 Program:
-
-//type your code here
-
-
-
+```
+#include<stdio.h>
+int main() {
+    int n;
+    scanf("%d",&n);
+    if(n>=71 && n<=79) {
+        switch(n)
+        {
+            case 71:
+            printf("seventy one");
+            break;
+            case 72:
+            printf("seventy two");
+            break;
+            case 73:
+            printf("seventy three");
+            break;
+            case 74:
+            printf("seventy four");
+            break;
+            case 75:
+            printf("seventy five");
+            break;
+            case 76:
+            printf("seventy six");
+            break;
+            case 77:
+            printf("seventy seven");
+            break;
+            case 78:
+            printf("seventy eight");
+            break;
+            case 79:
+            printf("seventy nine");
+            break;
+        }
+    }
+    else if(n>79){
+        printf("Greater than 79");
+    }
+}
+```
 
 Output:
 
-
-//paste your output here
-
-
-
-
-
+![Screenshot 2025-04-26 215955](https://github.com/user-attachments/assets/fc4beada-e8af-438a-94be-c7829d0b3cb3)
 
 Result:
 Thus, the program is verified successfully
@@ -46,21 +77,36 @@ Algorithm:
 6.	End
  
 Program:
+```
+#include<stdio.h>
+void digit_frequency(const char *s)
+{
+    int freq[10]={0};
+    for (int i=0;s[i]!='\0';i++)
+    {
+        if(s[i]>='0' && s[i]<='9')
+        {
+            freq[s[i]-'0']++;
+        }
+    }
+        for(int i=0;i<10;i++)
+        {
+            printf("%d ",freq[i]);
+        }
+ printf("\n");
+ }
+ int main()
+    {
+        char s[100];
+        scanf("%s",s);
+        digit_frequency(s);
+    }
 
-//type your code here
-
-
-
+```
 
 Output:
 
-
-//paste your output here
-
-
-
-
-
+![Screenshot 2025-04-26 214130](https://github.com/user-attachments/assets/6a1cc8f5-403b-4e54-b09b-0030b5f48d8f)
 
 Result:
 Thus, the program is verified successfully
@@ -83,21 +129,58 @@ Free the memory allocated for each string in s Free the memory allocated for s
 7.	End
  
 Program:
-
-//type your code here
-
-
-
-
+```
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+void swap(char **a,char**b)
+{
+    char *temp=*a;
+    *a=*b;
+    *b=temp;
+}
+void reverse(char*arr[],int start,int end)
+{
+    while(start<end){
+        swap(&arr[start],&arr[end]);
+        start++;
+        end--;
+    }
+}
+int next_permutation(char*arr[],int n){
+    int i=n-2;
+    while (i >= 0 && strcmp(arr[i],arr[i+1])>=0)i--;
+    if(i<0)return 0;
+    int j=n-1;
+    while(strcmp(arr[i],arr[j])>=0)j--;
+    swap(&arr[i],&arr[j]);
+    reverse(arr,i+1,n-1);
+    return 1;
+}
+int compare(const void *a,const void*b){
+    return strcmp(*(const char **)a,*(const char **)b);
+}
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    char *strings[n];
+    for(int i=0;i<n;i++){
+        strings[i]=malloc(101);
+        scanf("%s",strings[i]);
+    }
+    qsort (strings,n,sizeof(char*),compare);
+    do{
+        for(int i=0;i<n;i++)printf("%s ",strings[i]);
+        printf("\n");
+    }while(next_permutation(strings,n));
+    for(int i=0;i<n;i++)free(strings[i]);
+    return 0;
+}
+```
 Output:
 
-
-//paste your output here
-
-
-
-
-
+![Screenshot 2025-04-26 214551](https://github.com/user-attachments/assets/f6e830c8-3e35-4083-b342-b1ccb1346365)
 
 Result:
 Thus, the program is verified successfully
@@ -116,21 +199,33 @@ Algorithm:
 7.	End
  
 Program:
-
-//type your code here
-
-
-
-
+```
+#include<stdio.h>
+void pattern(int n)
+{
+    int size=2*n-1;
+    for(int i=0;i<size;i++)
+    {
+        for(int j=0;j<size;j++)
+        {
+            int min=i<j?i:j;
+            min=min<size-i?min:size-i-1;
+            min=min<size-j?min:size-j-1;
+            printf("%d ",n-min);
+        }
+        printf("\n");
+    }
+}
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    pattern(n);
+}
+```
 Output:
 
-
-//paste your output here
-
-
-
-
-
+![Screenshot 2025-04-26 213305](https://github.com/user-attachments/assets/e9130a17-0e45-44c3-b985-2c3ce34e8b19)
 
 Result:
 Thus, the program is verified successfully
