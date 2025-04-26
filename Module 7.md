@@ -10,7 +10,7 @@ Algorithm:
 4.	If e.age <= 6
 -	Print "Vaccine Eligibility: No"
 Else
--	Print "Vaccine Eligibility: Yes"
+-	Print "Vaccine Eligibility: Yess"
 5.	Print details (e.age, e.n)
 6.	Return 0
  
