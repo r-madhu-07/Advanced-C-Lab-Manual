@@ -251,18 +251,26 @@ o	Call the square() function and display the result.
 
 Program:
 
-//type your code here
-
-
-
+```
+#include <stdio.h>
+int square() {
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    return num * num;
+}
+int main() {
+    int result;
+    result = square(); 
+    printf("Square of the number is: %d\n", result);
+    return 0;
+}
+```
 
 Output:
 
 
-//paste your output here
-
-
-
+![Screenshot 2025-04-27 121320](https://github.com/user-attachments/assets/4b56fefb-4a6d-4b43-915e-405a43f04c25)
 
 
 
